@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <link rel="stylesheet" href="../assets/Bootstrap/css/bootstrap.min.css" />
+
+<%- include('./header.ejs') %>
+  <div class="container-fluid p-0">
+    <div class="row m-0 p-0">
+        
+      <div class="col-3 p-0"><%- include('./left.ejs') %></div>
+      <div class="col-9 border border-info">
+        <form method="post" class="mt-5 lh-lg" action="/dashbord/addproduct" enctype="multipart/form-data">
+
+          <div>
+            <label for="">New Product Name</label>
+            <input type="text" name="ProductName" class="form-control" placeholder="Enter Product name" />
+          </div>
+
+          <div>
+            <label for="">Product Price</label>
+            <input type="text" name="ProductPrice" class="form-control" placeholder="Enter Product Price" />
+          </div>
+
+          <div>
+            <label for="">Product Image</label>
+            <input type="file" name="ProductImage" class="form-control" />
+          </div>
+
+          <div>
+            <button class="btn btn-primary mt-4">Submit</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+ <%- include('./header.ejs') %>
+ <% if(singup_cop.length>0){%>
+<table style="width:100%">
+  <tr>
+    <th>fname</th>
+    <th>lname</th>
+    <th>email</th>
+  <th> address</th>
+  <th>city</th>
+  <th>state</th>
+  <th>areacode</th>
+    
+  </tr>
+  <%for(var i=0;i<singup_cop.length;i++){%>
+  
+  <tr>
+    
+  <td><%= singup_cop[i].fname %></td>
+  <td><%= singup_cop[i].lname %></td>
+  <td><%= singup_cop[i].email %></td>
+<td><%= singup_cop[i]. address %></td>
+<td><%= singup_cop[i].city %></td>
+<td><%= singup_cop[i].state %></td>
+<td><%= singup_cop[i].areacode %></td>
+ <td>
+   <a href='/edit<%=singup_cop[i]._id%>' >edit</a>
+   <a href='/delete<%=singup_cop[i]._id%>'>delete</a>
+   <a href='/show<%=singup_cop[i]._id%>'>show</a>
+   </td> </tr>
+<% } %>
+</table>
+<% } else {  %>
+  no record found
+
+  <% } %>
+
+</body>
+</html>
+
+
+</html>
